@@ -18,7 +18,7 @@ parser.add_argument("--model_config_path", type=str, default="None")
 arg = parser.parse_args()
 print(arg)
 
-TRAIN_FILE = 'olid-training-v1.0.tsv'
+TRAIN_FILE = 'df.tsv'
 MAX_SEQ_LENGTH = 100
 
 data_path = arg.data_path
