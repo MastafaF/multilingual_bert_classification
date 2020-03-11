@@ -15,6 +15,11 @@ parser.add_argument("--model_state_path", type=str, default="None")
 parser.add_argument("--load_dataset_from_pickle", action='store_true')
 parser.add_argument("--model_config_path", type=str, default="None")
 
+
+parser.add_argument("--anomaly_ratio", type = float, default = 1.0)
+parser.add_argument("--val_ratio", type = float, default = 0.2)
+parser.add_argument("--test_ratio", type = float, default = 0.2)
+
 arg = parser.parse_args()
 print(arg)
 

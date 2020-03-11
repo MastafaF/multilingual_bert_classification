@@ -31,7 +31,8 @@ class ClassificationModel:
         self.gpu = gpu
         self.bert_model = bert_model
 
-        self.train_df, self.test_df, self.val_df  = data_reader.load_dataset(config.data_path)
+        self.train_df, self.test_df, self.val_df  = data_reader.load_dataset(config.data_path, anomaly_ratio = config.anomaly_ratio,
+                                                                             val_ratio = config.val_ratio, test_ratio = config.test_ratio)
 
         self.num_classes = len(LABELS)
 
