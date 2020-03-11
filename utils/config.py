@@ -38,3 +38,6 @@ USE_GPU = arg.gpu
 load_frompretrain = arg.load_frompretrain
 model_config_path = arg.model_config_path
 model_state_path = arg.model_state_path
+anomaly_ratio = arg.anomaly_ratio
+val_ratio = arg.val_ratio
+test_ratio = arg.test_ratio

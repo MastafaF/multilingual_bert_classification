@@ -99,11 +99,11 @@ def load_dataset(path, anomaly_ratio = 1, val_ratio = 0.2, test_ratio = 0.2):
         # valid = data.sample(100)
         # data = data.drop(valid.index)
 
-        print(len(data))
+        print(len(train))
         print(len(test))
         print(len(valid))
 
-        save_obj(data, 'train')
+        save_obj(train, 'train')
         save_obj(test, 'test')
         save_obj(valid, 'valid')
 
