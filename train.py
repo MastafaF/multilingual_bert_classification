@@ -19,4 +19,6 @@ cm.create_test_predictions("./pred.csv")
 
 if __name__ == '__main__':
     print('running')
+    if config.USE_GPU:
+        print("Using GPU to make things faster :)")
     # config.USE_GPU = False
