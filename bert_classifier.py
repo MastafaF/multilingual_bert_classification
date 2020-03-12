@@ -13,6 +13,7 @@ from utils import data_reader
 from utils import config
 import os
 import matplotlib.pyplot as plt
+import pandas as pd
 
 LABELS = {
     "normal": 1,
@@ -200,10 +201,10 @@ class ClassificationModel:
                     torch.cuda.empty_cache()
 
             f1, acc = self.val()
-            print(f"\nF1 score: {f1}, Accuracy: {acc}")
+            print(f"\nF1 score evaluation: {f1}, Accuracy: {acc}")
 
             loss = total_loss / len(train_dataloader)
-            print("epoch {} loss: {}".format(e,loss))
+            print("epoch {} loss train: {}".format(e,loss))
             if plot_path is not None:
                 self.plt_y_l.append(loss)
                 self.plt_x_l.append(e)
@@ -271,9 +272,15 @@ class ClassificationModel:
     def create_test_predictions(self, path):
 
 
-        tests_features = data_reader.convert_examples_to_features(self.test_df,
-                                                                 config.MAX_SEQ_LENGTH,
-                                                                 self.tokenizer)
+        if path is None:
+            tests_features = data_reader.convert_examples_to_features(self.test_df,
+                                                                     config.MAX_SEQ_LENGTH,
+                                                                     self.tokenizer)
+        else:
+            test_df = pd.read_csv(path, sep='\t')
+            tests_features = data_reader.convert_examples_to_features(test_df,
+                                                                     config.MAX_SEQ_LENGTH,
+                                                                     self.tokenizer)
 
         all_input_ids = torch.tensor([f.input_ids for f in tests_features], dtype=torch.long)
         all_input_mask = torch.tensor([f.input_mask for f in tests_features], dtype=torch.long)

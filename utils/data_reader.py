@@ -57,7 +57,10 @@ def load_dataset(path, anomaly_ratio = 1, val_ratio = 0.2, test_ratio = 0.2):
 
         # split data intro train and test
         train, test = train_test_split(data, test_size = test_ratio + val_ratio, stratify = data['labels'])
-        test, valid = train_test_split(test, test_size = val_ratio, stratify = test['labels'])
+        # For now, we take exact same amount of data or Test and Validation sets
+        # Hence, test_size = 0.5 here
+        # @TODO: do something more general than that in the future
+        test, valid = train_test_split(test, test_size = 0.5, stratify = test['labels'])
 
         # controlling the ratio of anomalies in the training data
         if anomaly_ratio != 1:

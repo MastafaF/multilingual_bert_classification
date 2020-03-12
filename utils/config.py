@@ -1,3 +1,10 @@
+"""
+
+To get the name of the desired BERT model, check the following:
+https://github.com/huggingface/transformers/blob/master/src/transformers/configuration_bert.py
+
+"""
+
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -20,6 +27,9 @@ parser.add_argument("--anomaly_ratio", type = float, default = 1.0)
 parser.add_argument("--val_ratio", type = float, default = 0.2)
 parser.add_argument("--test_ratio", type = float, default = 0.2)
 
+# Zero shot setting
+parser.add_argument("--zero_shot_data_path", type = str, default = None)
+
 arg = parser.parse_args()
 print(arg)
 
@@ -41,3 +51,4 @@ model_state_path = arg.model_state_path
 anomaly_ratio = arg.anomaly_ratio
 val_ratio = arg.val_ratio
 test_ratio = arg.test_ratio
+zero_shot_data_path = arg.zero_shot_data_path
