@@ -103,6 +103,13 @@ def load_dataset(path, anomaly_ratio = 1, val_ratio = 0.2, test_ratio = 0.2):
         print(len(test))
         print(len(valid))
 
+        print("==== Distribution of training set ====")
+        print("Number of anomalies: {}".format(train[train.labels==0].shape[0]))
+        print("Percentage of anomalies {}%".format(100-train.labels.mean()*100))
+        print("Number of normal: {}".format(train[train.labels==1].shape[0]))
+        print("=======================================")
+
+
         save_obj(train, 'train')
         save_obj(test, 'test')
         save_obj(valid, 'valid')
