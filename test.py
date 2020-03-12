@@ -11,7 +11,7 @@ if config.load_frompretrain == True:
 else:
     cm.new_model()
 
-actual_to_save, predictions_to_save = cm.create_test_predictions("./pred.csv")
+actual_to_save, predictions_to_save = cm.create_test_predictions()
 
 from sklearn.metrics import f1_score
 
