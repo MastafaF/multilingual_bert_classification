@@ -7,14 +7,14 @@ We used mBERT for multiclass classification on an anomaly detection setting.
 The parameters we use from now are the following. For training:  
  
 * --gpu : If you want to use GPU, this will set it to true. 
-* --data_path data/  : Folder where your data is. Data should be named df.tsv 
-* --save_path save/ :  Folder where your model is saved.  
-* --lr 5e-5  : Learning rate. Recommendations from [this paper] (https://arxiv.org/abs/1810.04805) : learning_rate in { 5e-5, 2e-5, 3e-5 }
-* --batch_size 16. Recommendations from [this paper] (https://arxiv.org/abs/1810.04805) : batch_size in { 16, 32 }
-* --epochs 4  Recommendations from [this paper] (https://arxiv.org/abs/1810.04805) : epochs in {3, 4}
-* --plot_path save/plot/ : Path where plot of training loss is stored. 
-* --bert_model bert-base-multilingual-cased : Bert model to be used. We used mBERT for Multilingual Book Corpus. 
-* --anomaly_ratio 0.005 : Anomaly ratio. In this example, we have 0.5% anomalies in training set. 
+* --data_path **data/**  : Folder where your data is. Data should be named df.tsv 
+* --save_path **save/** :  Folder where your model is saved.  
+* --lr **5e-5**  : Learning rate. Recommendations from [this paper] (https://arxiv.org/abs/1810.04805) : learning_rate in { 5e-5, 2e-5, 3e-5 }
+* --batch_size **16**. Recommendations from [this paper] (https://arxiv.org/abs/1810.04805) : batch_size in { 16, 32 }
+* --epochs **4**  Recommendations from [this paper] (https://arxiv.org/abs/1810.04805) : epochs in {3, 4}
+* --plot_path **save/plot/** : Path where plot of training loss is stored. 
+* --bert_model **bert-base-multilingual-cased** : Bert model to be used. We used mBERT for Multilingual Book Corpus. 
+* --anomaly_ratio **0.005** : Anomaly ratio. In this example, we have 0.5% anomalies in training set. 
 
 
 For testing, check save/model/ and take notes of which one performs best (**should be done automatically in the future**). 
