@@ -16,7 +16,7 @@ cm.train(config.epochs, config.batch_size, config.lr, config.plot_path,  config.
 
 
 # cm.create_test_predictions("./pred.csv")
-cm.create_test_predictions("")
+cm.create_test_predictions()
 
 if __name__ == '__main__':
     print('running')
